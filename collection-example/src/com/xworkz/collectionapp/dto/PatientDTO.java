@@ -1,8 +1,8 @@
-package com.xworkz.hospitalapp.dto;
+package com.xworkz.collectionapp.dto;
 
-import com.xworkz.hospitalapp.constant.Gender;
+import com.xworkz.collectionapp.constant.*;
 
-public class PatientDTO {
+public class PatientDTO implements Comparable<PatientDTO>{
 	
 	
 	private int patientId;
@@ -13,7 +13,19 @@ public class PatientDTO {
 	private long contactNo;
 	private Gender gender ; 
 	
-	
+
+	public PatientDTO(int patientId, String patientName, String address, String disease, int age, long contactNo,
+			Gender gender) {
+		this.patientId = patientId;
+		this.patientName = patientName;
+		this.address = address;
+		this.disease = disease;
+		this.age = age;
+		this.contactNo = contactNo;
+		this.gender = gender;
+	}
+
+
 	public PatientDTO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -93,6 +105,12 @@ public class PatientDTO {
 	public String toString() {
 		return "PatientDTO [patientId=" + patientId + ", patientName=" + patientName + ", address=" + address
 				+ ", disease=" + disease + ", age=" + age + ", contactNo=" + contactNo + ", gender=" + gender + "]";
+	}
+
+
+	@Override
+	public int compareTo(PatientDTO o) {
+		return this.patientId - o.patientId;
 	}
 	
 	

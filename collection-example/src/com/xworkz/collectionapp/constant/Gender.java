@@ -1,4 +1,4 @@
-package com.xworkz.hospitalapp.constant;
+package com.xworkz.collectionapp.constant;
 
 public enum Gender {
 	
